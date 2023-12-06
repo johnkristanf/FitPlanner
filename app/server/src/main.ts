@@ -9,6 +9,7 @@ import { ValidationPipe } from '@nestjs/common';
 
 console.log('port', process.env.SERVER_PORT)
 
+
 async function bootstrap() {
   dotenv.config();
 
@@ -25,6 +26,9 @@ async function bootstrap() {
 
   const configService = app.get(ConfigService);
   const port = configService.get<number>('SERVER_PORT')
+
+  console.log('port in config', typeof port)
+
 
   app.use(cookieParser());
   app.useGlobalPipes(new ValidationPipe());

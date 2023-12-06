@@ -34,7 +34,7 @@ export class AuthController {
 
       res.cookie('access_token', token, {
         maxAge: 604800000,
-        secure: true,
+        secure: isProduction,
         httpOnly: true,
       });
 
@@ -59,7 +59,7 @@ export class AuthController {
 
     res.cookie('access_token', token, {
       maxAge: 604800000,
-      secure: true,
+      secure: isProduction,
       httpOnly: true,
 
     });
