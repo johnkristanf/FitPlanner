@@ -9,7 +9,7 @@
   "scripts": {
     "dev": "turbo run dev",
     "build": "turbo run build",
-    "start": "set NODE_ENV=production && node app/server/dist/main"
+    "start": "node app/server/dist/main"
   },
   "workspaces": [
     "app/*"

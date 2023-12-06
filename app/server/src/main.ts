@@ -7,7 +7,7 @@ import * as cookieParser from 'cookie-parser';
 import { ConfigService } from '@nestjs/config';
 import { ValidationPipe } from '@nestjs/common';
 
-console.log('process.env.NODE_ENV', process.env.NODE_ENV)
+console.log('port', process.env.SERVER_PORT)
 
 async function bootstrap() {
   dotenv.config();
