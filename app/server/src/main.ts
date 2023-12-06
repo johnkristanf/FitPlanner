@@ -25,7 +25,7 @@ async function bootstrap() {
   });
 
   const configService = app.get(ConfigService);
-  const port = configService.get<number>('SERVER_PORT')
+  const port: number = parseInt(configService.get<string>('SERVER_PORT'))
 
   console.log('port in config', typeof port)
 
