@@ -11,8 +11,6 @@
     "build": "turbo run build",
     "start": "set NODE_ENV=production && node app/server/dist/main"
   },
-  
-
   "workspaces": [
     "app/*"
   ]
