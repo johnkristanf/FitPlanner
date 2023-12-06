@@ -1,0 +1,37 @@
+import { NestFactory } from '@nestjs/core';
+import { AppModule } from './app.module';
+
+import * as dotenv from 'dotenv';
+import * as cookieParser from 'cookie-parser';
+
+import { ConfigService } from '@nestjs/config';
+import { ValidationPipe } from '@nestjs/common';
+
+console.log('process.env.NODE_ENV', process.env.NODE_ENV)
+
+async function bootstrap() {
+  dotenv.config();
+
+  const app = await NestFactory.create(AppModule, {
+    
+    cors: {
+      origin: 'https://fitplanner.vercel.app',
+      methods: ['GET', 'POST', 'PUT', 'DELETE'],
+      allowedHeaders: ['Authorization', 'Content-Type'],
+      credentials: true
+    },
+
+  });
+
+  const configService = app.get(ConfigService);
+  const port = configService.get<number>('SERVER_PORT')
+
+  app.use(cookieParser());
+  app.useGlobalPipes(new ValidationPipe());
+  app.setGlobalPrefix('server');
+
+  await app.listen(port);
+  
+}
+
+bootstrap();

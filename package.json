@@ -1,0 +1,19 @@
+{
+  "devDependencies": {
+    "@babel/core": "^7.23.5",
+    "@babel/preset-env": "^7.23.5",
+    "@babel/preset-typescript": "^7.23.3",
+    "babel-loader": "^9.1.3",
+    "turbo": "^1.10.16"
+  },
+  "scripts": {
+    "dev": "turbo run dev",
+    "build": "turbo run build",
+    "start": "set NODE_ENV=production && node app/server/dist/main"
+  },
+  
+
+  "workspaces": [
+    "app/*"
+  ]
+}
