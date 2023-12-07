@@ -34,12 +34,12 @@ export class AuthController {
 
       res.cookie('access_token', token, {
         maxAge: 604800000,
-        secure: isProduction,
+        secure: true,
         httpOnly: true,
       });
 
 
-      res.redirect('http://localhost:8080/meal-plans');
+      res.redirect('https://fitplanner.vercel.app/meal-plans');
   }
 
   
@@ -59,7 +59,7 @@ export class AuthController {
 
     res.cookie('access_token', token, {
       maxAge: 604800000,
-      secure: isProduction,
+      secure: true,
       httpOnly: true,
 
     });
