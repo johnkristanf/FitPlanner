@@ -6,7 +6,7 @@ import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import { removeMeal } from '../../../../services/CustomMeal/removeMeal';
 import { mealDataTobeDeletedTypes } from '../../../../lib/types/MealPlans';
 
-// import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 type NutrientsType = {
     name: string,
@@ -46,7 +46,7 @@ export const CustomMealsDataModal = ({ Mealcontents, Nutrients, MealType_Weekday
 
         console.log('response from remove', response);
 
-        // const navigate = useNavigate()
+        const navigate = useNavigate()
 
         if(response){
 
@@ -59,7 +59,7 @@ export const CustomMealsDataModal = ({ Mealcontents, Nutrients, MealType_Weekday
             });
 
            setTimeout(() => {
-            closeCustomMealModal(false)
+            navigate('/meal-plans')
            }, 1500) 
         }
 
