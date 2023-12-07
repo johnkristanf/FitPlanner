@@ -27,6 +27,8 @@ async function bootstrap() {
   const configService = app.get(ConfigService);
   const port: number = parseInt(configService.get<string>('SERVER_PORT'))
 
+  console.log('port', port)
+
 
   app.use(cookieParser());
   app.useGlobalPipes(new ValidationPipe());
