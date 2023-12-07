@@ -16,17 +16,22 @@ import { join } from 'path';
     ApiModule,
     AuthModule, 
     CustomMealsModule,
-
-    ServeStaticModule.forRoot({
-      rootPath: join(__dirname, '../..', 'client', 'dist')
-    }),
     
     ConfigModule.forRoot({
       isGlobal: true,
       cache: true,
     }),   
 
-    MongooseModule.forRoot(process.env.MONGO_DB_URI),
+    MongooseModule.forRootAsync({
+      imports: [ConfigModule],
+
+      useFactory: async (configService: ConfigService) => ({
+        uri: configService.get<string>('MONGO_DB_URI'),
+      }),
+
+      inject: [ConfigService],
+
+    }),
 
   ],
 

@@ -4,7 +4,7 @@ import { ExercisesType, ExerciseApiResponseType } from '../lib/types/Exercises';
 
 export const fetchExercisesbyAttributes = async (exerciseData: ExercisesType): Promise<ExerciseApiResponseType[]> => {
 
-    const response = await axios.post('https://fitplanner.cyclic.app/server/api/exercises', exerciseData);
+    const response = await axios.post('https://fitplanner-server.onrender.com/api/exercises', exerciseData);
 
     return response.data
 }
@@ -12,7 +12,7 @@ export const fetchExercisesbyAttributes = async (exerciseData: ExercisesType): P
 
 export const fetchAllExercises = async (): Promise<ExerciseApiResponseType[]> => {
 
-    const response = await axios.get('https://fitplanner.cyclic.app/server/api/exercises');
+    const response = await axios.get('https://fitplanner-server.onrender.com/api/exercises');
 
     return response.data
 }

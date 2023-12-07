@@ -32,9 +32,8 @@ async function bootstrap() {
 
   app.use(cookieParser());
   app.useGlobalPipes(new ValidationPipe());
-  app.setGlobalPrefix('server');
 
-  await app.listen(4000);
+  await app.listen(port);
   
 }
 
