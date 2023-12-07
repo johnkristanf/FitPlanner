@@ -115,9 +115,9 @@ export class CustomMealsService {
             mealtype !== mealDataTobeDeleted.MealType_Weekday.mealtype
           );
 
-        if(mealdata.mealtype.length === 0) await this.CustomMealModel.findByIdAndDelete(mealDataTobeDeleted.MealType_Weekday.meal_id)
+      await mealdata.save();
 
-      return await mealdata.save();
+      return true;
 
     
     } catch (error) {

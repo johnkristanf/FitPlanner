@@ -1,9 +1,12 @@
+import Swal from 'sweetalert2';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
 
 import { removeMeal } from '../../../../services/CustomMeal/removeMeal';
 import { mealDataTobeDeletedTypes } from '../../../../lib/types/MealPlans';
+
+import { useNavigate } from 'react-router-dom';
 
 type NutrientsType = {
     name: string,
@@ -41,7 +44,24 @@ export const CustomMealsDataModal = ({ Mealcontents, Nutrients, MealType_Weekday
 
         const response = await removeMeal(mealDataTobeDeleted);
 
-        console.log('response from remove', response.data);
+        console.log('response from remove', response);
+
+        const navigate = useNavigate()
+
+        if(response){
+
+            Swal.fire({
+                position: 'top-end',
+                icon: 'success',
+                title: 'Meal deleted Successfully!',
+                showConfirmButton: false,
+                timer: 1500
+            });
+
+           setTimeout(() => {
+            closeCustomMealModal(false)
+           }, 1500) 
+        }
 
 
     }
