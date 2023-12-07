@@ -26,16 +26,7 @@ import { join } from 'path';
       cache: true,
     }),   
 
-    MongooseModule.forRootAsync({
-      imports: [ConfigModule],
-
-      useFactory: async (configService: ConfigService) => ({
-        uri: configService.get<string>('MONGO_DB_URI'),
-      }),
-
-      inject: [ConfigService],
-
-    }),
+    MongooseModule.forRoot(process.env.MONGO_DB_URI),
 
   ],
 
