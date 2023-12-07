@@ -7,7 +7,7 @@ import * as cookieParser from 'cookie-parser';
 import { ConfigService } from '@nestjs/config';
 import { ValidationPipe } from '@nestjs/common';
 
-console.log('port', process.env.MONGO_DB_URI)
+console.log('MONGO_DB_URI', process.env.MONGO_DB_URI)
 
 
 async function bootstrap() {
