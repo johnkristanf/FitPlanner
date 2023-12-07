@@ -14,27 +14,23 @@ async function bootstrap() {
   dotenv.config();
 
   const app = await NestFactory.create(AppModule, {
-    
     cors: {
       origin: 'https://fitplanner.vercel.app',
       methods: ['GET', 'POST', 'PUT', 'DELETE'],
       allowedHeaders: ['Authorization', 'Content-Type'],
-      credentials: true
+      credentials: true,
+      exposedHeaders: ['Content-Disposition'], // Optional: Add any exposed headers if needed
     },
-
   });
 
   const configService = app.get(ConfigService);
-  const port: number = parseInt(configService.get<string>('SERVER_PORT'))
-
-  console.log('port', port)
-
+  const port: number = parseInt(configService.get<string>('SERVER_PORT'));
 
   app.use(cookieParser());
   app.useGlobalPipes(new ValidationPipe());
 
   await app.listen(port);
-  
 }
 
 bootstrap();
+
