@@ -3,7 +3,7 @@ import { mealDataTobeDeletedTypes } from '../../lib/types/MealPlans';
 
 export const removeMeal = async (mealDataTobeDeleted: mealDataTobeDeletedTypes) => {
 
-    const response = await axios.delete('http://fitplanner-server.onrender.com/custom-meals', { data: mealDataTobeDeleted });
+    const response = await axios.delete('https://fitplanner-server.onrender.com/custom-meals', { data: mealDataTobeDeleted });
     
     return response.data
 }
