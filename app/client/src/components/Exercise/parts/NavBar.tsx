@@ -33,13 +33,14 @@ const AuthButtons = () => {
 
   return(
      <div className="flex gap-10">
+
           <Link to='/auth/login'><button className="bg-orange-500 rounded-md p-2 text-white hover:opacity-75">
             Login
           </button></Link>
 
-            <Link to="/auth/signup"><button className="bg-slate-400 rounded-md p-2 text-white  hover:opacity-75">
-              Signup
-            </button></Link>
+          <Link to="/auth/signup"><button className="bg-slate-400 rounded-md p-2 text-white  hover:opacity-75">
+            Signup
+          </button></Link>
 
       </div>
   )
@@ -65,23 +66,12 @@ export const NavBar = () => {
 
   useEffect(() => {
 
-    async function fetchUser() {
+    userData().then((user) => {
+      setUserData(user)
 
-      try {
-        const user = await userData();
+    });
         
-        setUserData(user)
-        
-      } catch (error) {
-        console.error(error);
-        throw error;
-      }
-      
-    }
-
-    fetchUser()
-
-  }, [])
+  }, [UserData])
  
 
   return (
