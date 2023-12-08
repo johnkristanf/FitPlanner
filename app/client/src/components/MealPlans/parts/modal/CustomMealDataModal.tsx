@@ -23,9 +23,7 @@ const NutrientsArray: NutrientsType[] = [
 
 export const CustomMealsDataModal = ({ Mealcontents, Nutrients, MealType_Weekday, closeCustomMealModal}: any) => {
 
-    console.log('Mealcontents', Mealcontents._id)
-    console.log('Nutrients', Nutrients._id)
-    console.log('MealType_Weekday', MealType_Weekday)
+    const navigate = useNavigate();
 
 
     NutrientsArray[0].value = Nutrients.calories;
@@ -46,7 +44,6 @@ export const CustomMealsDataModal = ({ Mealcontents, Nutrients, MealType_Weekday
 
         console.log('response from remove', response);
 
-        const navigate = useNavigate()
 
         if(response){
 
@@ -58,9 +55,9 @@ export const CustomMealsDataModal = ({ Mealcontents, Nutrients, MealType_Weekday
                 timer: 1500
             });
 
-           setTimeout(() => {
-            navigate('/meal-plans')
-           }, 1500) 
+            setTimeout(() => {
+                navigate("/meal-plans"); 
+            }, 1500)
         }
 
 
