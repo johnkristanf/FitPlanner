@@ -62,7 +62,7 @@ export class AuthController {
 
     res.cookie('access_token', token, {
       maxAge: 604800000,
-      secure: true,
+      secure: isProduction,
       httpOnly: true,
       path: '/'
 
@@ -79,6 +79,7 @@ export class AuthController {
   @UseGuards(JwtAuthGuard)
 
   UserProfile(@Req() req: any) {
+    console.log('user data', req.user)
     return req.user
     
   }
