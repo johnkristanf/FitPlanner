@@ -16,6 +16,8 @@ import { JwtPayload } from 'src/lib/types/JwtPayload';
 
             const extractJwtFromCookie = (req: any) => {
 
+                console.log('cookie', req.cookies['access_token'])
+
                 let token = null;
 
                 if(req && req.cookies) token = req.cookies['access_token'];
