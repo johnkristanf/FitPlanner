@@ -58,12 +58,14 @@ export class AuthController {
 
     const token = await this.authService.Login(user);
 
+    console.log('token in local user', token)
+
     res.cookie('access_token', token, {
       maxAge: 604800000,
       secure: true,
       httpOnly: true,
       path: '/'
-      
+
     });
 
 

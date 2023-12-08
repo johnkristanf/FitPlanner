@@ -12,8 +12,7 @@ import { JwtPayload } from 'src/lib/types/JwtPayload';
     @Injectable()
     export class JwtStrategy extends PassportStrategy(Strategy, 'jwt') {
 
-        constructor(
-            @InjectModel('User') private readonly UserModel: Model<UserType>){
+        constructor(@InjectModel('User') private readonly UserModel: Model<UserType>){
 
             const extractJwtFromCookie = (req: any) => {
 

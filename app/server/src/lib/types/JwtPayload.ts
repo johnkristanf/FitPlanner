@@ -1,7 +1,7 @@
 import { Types } from 'mongoose';
 
 export interface GoogleJwtPayload {
-    google_id?: String | Types.ObjectId,
+    google_id?: String,
     email: String
 };
 
