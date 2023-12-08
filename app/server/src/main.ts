@@ -18,7 +18,6 @@ async function bootstrap() {
     cors: {
       origin: 'https://fitplanner.vercel.app',
       methods: ['GET', 'POST', 'PUT', 'DELETE'],
-      allowedHeaders: ['Authorization', 'Content-Type'],
       credentials: true,
     }
     
