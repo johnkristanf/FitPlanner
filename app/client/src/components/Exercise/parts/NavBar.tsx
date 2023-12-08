@@ -68,10 +68,10 @@ export const NavBar = () => {
 
     userData().then((user) => {
       setUserData(user)
-
+      
     });
         
-  }, [UserData])
+  }, [])
  
 
   return (
