@@ -16,7 +16,7 @@ async function bootstrap() {
   const app = await NestFactory.create(AppModule, {
 
     cors: {
-      origin: 'https://fitplanner.vercel.app/',
+      origin: 'https://fitplanner.vercel.app',
       methods: ['GET', 'POST', 'PUT', 'DELETE'],
       allowedHeaders: ['Authorization', 'Content-Type'],
       credentials: true,
@@ -32,7 +32,7 @@ async function bootstrap() {
   app.useGlobalPipes(new ValidationPipe());
 
   await app.listen(port);
-
+  
 }
 
 bootstrap();
