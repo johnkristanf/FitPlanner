@@ -133,7 +133,7 @@ export default () => {
 
                 <h1 className="mb-4 font-semibold">Login with your Social Media Accounts</h1>
 
-                    <a href="http://localhost:4000/server/auth/google"><button className="bg-slate-800 text-white font-bold p-2 rounded-md w-full">
+                    <a href="https://fitplanner-server.onrender.com/auth/google"><button className="bg-slate-800 text-white font-bold p-2 rounded-md w-full">
                       <FontAwesomeIcon icon={faGoogle} className="mr-2"/> 
                       Login using Google
 
