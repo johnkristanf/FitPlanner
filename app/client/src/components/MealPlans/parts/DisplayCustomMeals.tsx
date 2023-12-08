@@ -18,19 +18,20 @@ export const DisplayCustomMeals = ({ closeModal }: any) => {
     const [SortedCustomMealPlans, setSortedCustomMealPlans] = useState<CustomMealPlansType[]>([]);
 
     useEffect(() => {
+
         findMeal().then((meals) => {
 
             const sortedMeals = SortWeekDays(meals);
             setSortedCustomMealPlans(sortedMeals);
-            console.log('SortedCustomMealPlans', sortedMeals);
 
         });
 
-    }, []); 
+    }, [SortedCustomMealPlans]); 
 
     const [isOpen, setisOpen] = useState<boolean>(false);
     const [Mealcontents, setMealcontents] = useState<string>();
     const [Nutrients, setNutrients] = useState<string>();
+    
     const [MealType_Weekday, setMealType_Weekday] = useState<removeMeal_WeekDayType>({ 
         mealtype: '',
         weekday: '',

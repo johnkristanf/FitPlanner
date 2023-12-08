@@ -79,7 +79,7 @@ export const MealsModal = ({ value, closeMealModal}: any) => {
             </div>  
 
 
-                {isOpen && <CustomMealModal closeMealModal={closeMealModal} closeCustomMealModal={setisOpen} value={value} />}
+                { isOpen && <CustomMealModal closeMealModal={closeMealModal} closeCustomMealModal={setisOpen} value={value} />}
 
         </> 
     )

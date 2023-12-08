@@ -57,9 +57,7 @@ export const CustomMealModal = ({ closeMealModal, closeCustomMealModal, value }:
                 }, 1500)
       
               }
-  
-          console.log('FormData', FormData)
-          
+            
           
         } catch (error: any) {
           console.error(error);
