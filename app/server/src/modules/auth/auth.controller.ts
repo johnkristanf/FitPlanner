@@ -36,7 +36,7 @@ export class AuthController {
         maxAge: 604800000,
         secure: true,
         httpOnly: true,
-        path: 'https://fitplanner.vercel.app'
+        path: '/'
       });
 
 
@@ -62,7 +62,7 @@ export class AuthController {
       maxAge: 604800000,
       secure: true,
       httpOnly: true,
-      path: 'https://fitplanner.vercel.app'
+      path: '/'
     });
 
 
