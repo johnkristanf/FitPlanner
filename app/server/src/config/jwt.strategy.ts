@@ -4,7 +4,6 @@ import { Injectable, HttpException, HttpStatus } from '@nestjs/common';
 
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
-import { ConfigService } from '@nestjs/config';
 
 import { UserType } from 'src/lib/types/User';
 import { JwtPayload } from 'src/lib/types/JwtPayload';
@@ -38,6 +37,8 @@ import { JwtPayload } from 'src/lib/types/JwtPayload';
 
 
         async validate(payload: JwtPayload) {
+
+            console.log('payload in jwt', payload)
 
             try {
 

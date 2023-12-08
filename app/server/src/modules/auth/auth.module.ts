@@ -23,7 +23,7 @@ import { UserSchema } from 'src/schema/User';
       imports: [ConfigModule],
 
       useFactory: async (configService: ConfigService) => ({
-        secret: process.env.JWT_SECRET,  
+        secret: configService.get<string>('JWT_SECRET'),  
         signOptions: { expiresIn: '7d' },
       }),
 
