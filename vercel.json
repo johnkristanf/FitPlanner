@@ -1,8 +1,9 @@
 {
-  "redirects": [
-    {
+  
+  "rewrites": [{
       "source": "/(.*)",
-      "destination": "https://fitplanner.vercel.app"
-    }
-  ]
+      "destination": "/"
+
+  }]
+
 }
