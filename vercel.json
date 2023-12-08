@@ -2,7 +2,7 @@
   "rewrites": [
     {
       "source": "/(.*)",
-      "destination": "/app/client/index.html"
+      "destination": "https://fitplanner.vercel.app"
     }
   ]
 }
