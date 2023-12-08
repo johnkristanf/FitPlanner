@@ -21,8 +21,6 @@ export const Login = async (userData: LoginCredentials) => {
         
         const response = await axios.post('https://fitplanner-server.onrender.com/auth/login', userData);
 
-        console.log('response', response.data)
-
         return response.data;
         
     } catch (error: any) {
@@ -36,7 +34,6 @@ export const Login = async (userData: LoginCredentials) => {
         }
 
         console.error(error);
-        throw error;
     }
 
 }

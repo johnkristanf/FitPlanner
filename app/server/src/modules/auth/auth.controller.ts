@@ -10,6 +10,7 @@ import { GoogleOauthGuard } from 'src/guard/google.guard';
 import { CreateUserDto } from '../user/dto/createUserDto';
 import { LoginUserDto } from '../user/dto/loginUserDto';
 
+
 @Controller('auth')
 export class AuthController {
   constructor(private readonly authService: AuthService) {}
@@ -57,6 +58,8 @@ export class AuthController {
     const isProduction = process.env.NODE_ENV === 'production';
 
     const token = await this.authService.Login(user);
+
+    if(!token) throw new HttpException('Error Generating Token', HttpStatus.INTERNAL_SERVER_ERROR)
 
     console.log('token in local user', token)
 
