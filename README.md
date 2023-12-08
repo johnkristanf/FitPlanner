@@ -4,6 +4,7 @@
          combination of React.js and Nest.js to deliver an intuitive user experience centered around exercise, meal planning, and calorie tracking.
 
 
+
 **Features**
 
 **Exercise Finder**
@@ -15,8 +16,11 @@ Exercise Details: Detailed information about each exercise, including instructio
 Customized Plans: Generate personalized meal plans tailored to individual dietary needs, preferences, and fitness goals.
 Nutritional Information: Access detailed nutritional data for each meal, including calories, macronutrients, and serving sizes.
 
+
 **Calorie Calculator**
 Track Daily Intake: Calculate and monitor daily calorie intake (e.g., maintaining, cutting, bulking) based on their age, weight, height gender and how often they exercise and the intensity.
+
+
 
 **Technologies Used**
 
@@ -24,6 +28,7 @@ Track Daily Intake: Calculate and monitor daily calorie intake (e.g., maintainin
 React Components: Utilizes reusable components to create a responsive and interactive user interface.
 State Management: Implements state management libraries such as Redux or Context API for efficient data handling.
 API Integration: Connects with backend services to fetch exercise information, meal plans, and nutritional data.
+
 
 **Backend (Nest.js)**
 RESTful APIs: Provides endpoints for frontend interactions, handling requests for exercise details, meal planning, and calorie calculations.
