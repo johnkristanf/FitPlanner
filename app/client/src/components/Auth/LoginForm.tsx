@@ -6,7 +6,7 @@ import { faGoogle } from "@fortawesome/free-brands-svg-icons";
 import { NavBar } from "../Exercise/parts/NavBar";
 import { Login } from "../../services/user/login";
 
-// import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 
 
@@ -18,7 +18,7 @@ export default () => {
 
       });
 
-      // const navigate = useNavigate();
+      const navigate = useNavigate();
 
 
       const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -39,7 +39,7 @@ export default () => {
 
         const login = await Login(FormData);
 
-        if(login) window.location.href = "/meal-plans";
+        if(login) navigate("/meal-plans");
 
       }
 

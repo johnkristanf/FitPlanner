@@ -8,7 +8,7 @@ import { ConfigService } from '@nestjs/config';
 import { ValidationPipe } from '@nestjs/common';
 
 console.log('MONGO_DB_URI', process.env.MONGO_DB_URI)
-
+console.log('node env', process.env.NODE_ENV)
 
 async function bootstrap() {
   dotenv.config();
