@@ -56,7 +56,7 @@ export const CustomMealsDataModal = ({ Mealcontents, Nutrients, MealType_Weekday
             });
 
             setTimeout(() => {
-                navigate("/meal-plans"); 
+                closeCustomMealModal(false)
             }, 1500)
         }
 
