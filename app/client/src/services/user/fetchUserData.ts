@@ -13,7 +13,6 @@ export const userData = async () => {
 
     } catch (error) {
         console.error(error);
-        throw error;
     }
    
 }
