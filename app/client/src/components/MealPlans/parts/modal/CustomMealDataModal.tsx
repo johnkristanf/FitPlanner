@@ -6,7 +6,6 @@ import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import { removeMeal } from '../../../../services/CustomMeal/removeMeal';
 import { mealDataTobeDeletedTypes } from '../../../../lib/types/MealPlans';
 
-import { useNavigate } from 'react-router-dom';
 
 type NutrientsType = {
     name: string,
@@ -22,8 +21,6 @@ const NutrientsArray: NutrientsType[] = [
 
 
 export const CustomMealsDataModal = ({ Mealcontents, Nutrients, MealType_Weekday, closeCustomMealModal}: any) => {
-
-    const navigate = useNavigate();
 
 
     NutrientsArray[0].value = Nutrients.calories;
