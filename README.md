@@ -1,10 +1,10 @@
 
-**#FitPlanner**
+# **FitPlanner**
 
 FitPlanner is a web application designed to empower users with tools for exercise discovery, meal planning, and calorie tracking. It provides a seamless experience using React.js for the frontend and Nest.js for the backend.
 
 
-**#Features**
+# **Features**
 
 **Exercise Finder**
 Search and Discover: Users can search for various exercises based on specific criteria such as muscle group, difficulty level, or exercise type.
@@ -21,7 +21,7 @@ Track Daily Intake: Calculate and monitor daily calorie intake (e.g., maintainin
 
 
 
-**#Technologies Used**
+#**Technologies Used**
 
 **Frontend (React.js)**
 React Components: Utilizes reusable components to create a responsive and interactive user interface.
