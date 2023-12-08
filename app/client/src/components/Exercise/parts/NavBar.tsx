@@ -34,7 +34,7 @@ const AuthButtons = () => {
   return(
      <div className="flex gap-10">
 
-          <Link to='/auth/login'><button className="bg-orange-500 rounded-md p-2 text-white hover:opacity-75">
+          <Link to='/auth/login'><button className="bg-red-500 rounded-md p-2 text-white hover:opacity-75">
             Login
           </button></Link>
 
