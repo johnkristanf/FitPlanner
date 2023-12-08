@@ -66,10 +66,15 @@ export const NavBar = () => {
 
   useEffect(() => {
 
-    userData().then((user) => {
-      setUserData(user)
+    const fetchUserData = async () => {
       
-    });
+      const response = await userData();
+
+      if(response) setUserData(response)
+
+    }
+
+    fetchUserData();
         
   }, [])
  

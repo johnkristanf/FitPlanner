@@ -1,14 +1,17 @@
+import axios from 'axios';
 
 
 export const userData = async () => {
 
     try {
 
-        const response = await fetch('https://fitplanner-server.onrender.com/auth/user/profile');
+        const response = await axios.get('https://fitplanner-server.onrender.com/auth/user/profile', {
+            withCredentials: true, 
+        });
 
         console.log('response', response)
 
-        if(response.ok) return response.json();
+        return response.data;
 
     } catch (error) {
         console.error(error);
