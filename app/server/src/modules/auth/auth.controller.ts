@@ -63,6 +63,7 @@ export class AuthController {
       secure: true,
       httpOnly: true,
       path: '/'
+      
     });
 
 

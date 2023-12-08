@@ -93,6 +93,8 @@ export class AuthService {
         
         const loginSuccess = await this.userService.Login(user);
 
+        console.log('loginSuccess local user data', loginSuccess)
+
         if(!loginSuccess) throw new HttpException('Incorrect Username or Password', HttpStatus.UNAUTHORIZED);
 
         return this.generateJwt({
