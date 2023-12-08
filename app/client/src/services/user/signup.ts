@@ -7,9 +7,7 @@ export const Signup = async (userData: SignupCredentials) => {
 
     try {
         
-        const response = await axios.post('https://fitplanner-server.onrender.com/auth/signup', userData, {
-            withCredentials: true, 
-        });
+        const response = await axios.post('https://fitplanner-server.onrender.com/auth/signup', userData);
 
         console.log('response', response.data)
 
