@@ -26,7 +26,7 @@ export const DisplayExercises = ({ Exercises }: any) => {
 
         <>  
 
-        <div className="max-md:block w-full flex flex-wrap gap-6 max-md:flex-col max-md:mt-16">
+        <div className="max-md:block w-full flex flex-wrap gap-6 max-md:flex-col max-md:mt-16 max-md-ml-[-5%]">
             
             {sortedExercises.map((data: any) => (
               

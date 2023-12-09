@@ -96,7 +96,7 @@ export const DisplayMeals = ({ Meals }: any) => {
     
             Meals.meals.map((data: any) => (
 
-                <div key={data.id} className="w-1/4 bg-gray-300 p-5 rounded-md mt-10">
+                <div key={data.id} className="w-1/4 max-md:w-80 bg-gray-300 p-5 rounded-md mt-10">
 
                    <h1 className="text-lg font-medium">Meal: {data.title} </h1>
                    <h1 className="text-lg font-medium">Servings: {data.servings}</h1>
