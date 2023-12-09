@@ -26,11 +26,11 @@ export const DisplayExercises = ({ Exercises }: any) => {
 
         <>  
 
-        <div className="max-md:block w-full flex max-md:flex-col">
+        <div className="max-md:block w-full flex flex-wrap max-md:flex-col max-md:mt-10">
             
             {sortedExercises.map((data: any) => (
               
-                <div key={data.name} className="w-1/4 bg-gray-300 p-5 rounded-md mt-10">
+                <div key={data.name} className="w-1/4 max-md:w-2/5 bg-gray-300 p-5 rounded-md mt-10">
 
                     <h1 className="text-lg font-medium">Name: {data.name} </h1>
                     <h1 className="text-lg font-medium">Type: {data.type}</h1>
