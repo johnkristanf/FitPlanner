@@ -9,8 +9,6 @@ export const userData = async () => {
             withCredentials: true
         });
 
-        console.log('response', response)
-
         return response.data;
 
     } catch (error) {

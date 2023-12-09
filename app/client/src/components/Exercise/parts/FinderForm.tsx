@@ -107,8 +107,6 @@ export const FinderForm = () => {
 
     const response = await fetchExercisesbyAttributes(exerciseData)
    
-    console.log(response);
-
     setExercises(response);
 
     setFormPopUp(false);
