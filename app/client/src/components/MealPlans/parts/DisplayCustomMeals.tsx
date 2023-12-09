@@ -72,7 +72,7 @@ export const DisplayCustomMeals = ({ closeModal }: any) => {
                     
                     SortedCustomMealPlans.map((plan: CustomMealPlansType) => (
 
-                        <div key={plan._id} className="w-1/4 h-full max-sm:w-full max-md:w-full bg-gray-300 p-5 rounded-md mt-10">
+                        <div key={plan._id} className="w-1/4 h-full max-md:w-4/5 bg-red-800 p-5 rounded-md mt-10">
 
                                 
                                 <h1 className="text-orange-500 font-bold text-2xl">{plan.weekday}</h1>
