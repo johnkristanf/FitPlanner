@@ -270,13 +270,13 @@ export const MealPlanForm = () => {
 
                                     </div>
 
+                                    <button onClick={() => setViewCustomMeals(true)} className='bg-orange-500 h-1/2 w-1/6 mt-5 max-md:self-auto  self-end text-white p-2 rounded-md hover:opacity-75'>
+                                          View Custom Meals
+                                    </button>
+
                             
 
                               </div>
-
-                              <button onClick={() => setViewCustomMeals(true)} className='bg-orange-500 h-1/2 w-1/6 mt-5 self-end text-white p-2 rounded-md hover:opacity-75'>
-                                          View Custom Meals
-                                    </button>
 
                            
 

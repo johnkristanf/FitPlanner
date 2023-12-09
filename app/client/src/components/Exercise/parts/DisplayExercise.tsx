@@ -30,7 +30,7 @@ export const DisplayExercises = ({ Exercises }: any) => {
             
             {sortedExercises.map((data: any) => (
               
-                <div key={data.name} className="w-1/4 max-md:w-2/5 bg-gray-300 p-5 rounded-md mt-10">
+                <div key={data.name} className="w-1/4 max-md:w-80 bg-gray-300 p-5 rounded-md mt-10">
 
                     <h1 className="text-lg font-medium">Name: {data.name} </h1>
                     <h1 className="text-lg font-medium">Type: {data.type}</h1>

@@ -66,7 +66,7 @@ export const DisplayCustomMeals = ({ closeModal }: any) => {
             </div>
         
 
-            <div className="fixed flex max-sm:flex-col max-sm:w-full max-sm:mt-10 justify-center w-full top-24 bottom-0 right-0 left-5 m-auto gap-10" style={{ zIndex: 600 }}>
+            <div className="fixed flex max-sm:flex-col max-sm:w-full max-sm:mt-10 max-sm:absolute justify-center w-full top-24 bottom-0 right-0 left-5 m-auto gap-10" style={{ zIndex: 600 }}>
 
                 {
                     

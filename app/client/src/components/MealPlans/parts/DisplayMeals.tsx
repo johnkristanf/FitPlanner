@@ -40,7 +40,7 @@ export const DisplayMeals = ({ Meals }: any) => {
                     
                     weeks.map(([key, value]: any) => (    
 
-                        <div key={key} className="w-1/4 max-md:w-40 bg-gray-300 p-5 rounded-md mt-10">
+                        <div key={key} className="w-1/4 max-md:w-72 bg-gray-300 p-5 rounded-md mt-10">
 
                             <h1 className="text-orange-500 font-bold text-2xl">{key}</h1>
 
