@@ -248,9 +248,9 @@ export const MealPlanForm = () => {
                         
                       </>
 
-                    : <div className='flex flex-col w-11/12 max-md:ml-[-20%]'>
+                    : <div className='flex flex-col w-11/12 max-md:ml-[-10%]'>
 
-                        <div className='flex max-md:flex-col max-md:ml-[-20%] gap-28'>
+                        <div className='flex max-md:flex-col max-md:ml-[-10%] gap-28 bg-red-800'>
 
                               <div className='flex flex-col mt-5 ml-5'>
                                 
@@ -270,11 +270,13 @@ export const MealPlanForm = () => {
 
                                     </div>
 
-                                    <button onClick={() => setViewCustomMeals(true)} className='bg-orange-500 h-1/2 w-1/6 mt-5 self-end text-white p-2 rounded-md hover:opacity-75'>
-                                          View Custom Meals
-                                    </button>
+                            
 
                               </div>
+
+                              <button onClick={() => setViewCustomMeals(true)} className='bg-orange-500 h-1/2 w-1/6 mt-5 self-end text-white p-2 rounded-md hover:opacity-75'>
+                                          View Custom Meals
+                                    </button>
 
                            
 

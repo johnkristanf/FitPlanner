@@ -40,7 +40,7 @@ export const DisplayMeals = ({ Meals }: any) => {
                     
                     weeks.map(([key, value]: any) => (    
 
-                        <div key={key} className="w-1/4 max-md:w-2/5 bg-gray-300 p-5 rounded-md mt-10">
+                        <div key={key} className="w-1/4 max-md:w-40 bg-gray-300 p-5 rounded-md mt-10">
 
                             <h1 className="text-orange-500 font-bold text-2xl">{key}</h1>
 
@@ -96,7 +96,7 @@ export const DisplayMeals = ({ Meals }: any) => {
     
             Meals.meals.map((data: any) => (
 
-                <div key={data.id} className="w-1/4 max-md:w-2/5 bg-gray-300 p-5 rounded-md mt-10">
+                <div key={data.id} className="w-1/4 bg-gray-300 p-5 rounded-md mt-10">
 
                    <h1 className="text-lg font-medium">Meal: {data.title} </h1>
                    <h1 className="text-lg font-medium">Servings: {data.servings}</h1>
