@@ -67,9 +67,10 @@ export class AuthController {
       maxAge: 604800000,
       secure: true,
       httpOnly: true,
+      sameSite: 'none', 
       path: '/'
-
     });
+    
 
 
     res.status(200).send(true);
