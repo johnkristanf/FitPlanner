@@ -69,7 +69,7 @@ export const CustomMealsDataModal = ({ Mealcontents, Nutrients, MealType_Weekday
         <div className='h-full w-full'>
 
             <div className="absolute z-50 bg-slate-700 px-5 py-16 rounded-md text-white w-full h-full 
-                            max-md:w-full max-md:h-96 max-md:left-[-20%]" 
+                            max-md:w-full max-md:h-60 max-md:left-[-20%]" 
 
                  style={{ left: '23%', right: '0', bottom: '0', top: '-10%' }}> 
 
