@@ -68,10 +68,10 @@ export const CustomMealsDataModal = ({ Mealcontents, Nutrients, MealType_Weekday
 
         <div className='h-full w-full'>
 
-            <div className="absolute z-50 bg-slate-700 px-5 py-16 rounded-md text-white w-full h-full 
-                            max-md:w-full max-md:h-60 max-md:left-[-20%]" 
+            <div className="absolute z-50 bg-slate-700 px-5 py-16 rounded-md text-white w-full h-4/5 
+                            max-md:w-full max-md:h-80 max-md:left-[-30%]" 
 
-                 style={{ left: '23%', right: '0', bottom: '0', top: '-10%' }}> 
+                 style={{ left: '5%', right: '0', bottom: '0', top: '-10%' }}> 
 
                 
                 <FontAwesomeIcon onClick={() => closeCustomMealModal(false)} className="text-4xl hover:opacity-75 text-white cursor-pointer absolute right-2 top-2" icon={faTimes} />
