@@ -26,7 +26,7 @@ export const DisplayExercises = ({ Exercises }: any) => {
 
         <>  
 
-        <div className="max-md:block w-full flex flex-col">
+        <div className="max-md:block w-full flex max-md:flex-col">
             
             {sortedExercises.map((data: any) => (
               

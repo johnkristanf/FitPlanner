@@ -248,9 +248,9 @@ export const MealPlanForm = () => {
                         
                       </>
 
-                    : <div className='flex flex-col w-11/12'>
+                    : <div className='flex flex-col w-11/12 max-md:ml-[-20%]'>
 
-                        <div className='flex gap-28'>
+                        <div className='flex max-md:flex-col max-md:ml-[-20%]  gap-28'>
 
                               <div className='flex flex-col mt-5 ml-5'>
                                   <h1 className='text-3xl font-bold text-slate-800 mb-3'>Generate Meal Plan</h1> 
@@ -258,7 +258,18 @@ export const MealPlanForm = () => {
                                       distribution, and meal adherence 
                                     </p>
 
-                                </div>
+                                    <div className="max-md:block hidden">
+
+                                        <button 
+                                            onClick={() => setFormPopUp(true)}
+                                            className='mt-5 bg-orange-500 rounded-md p-2 text-white hover:opacity-75'>
+              
+                                            Generate Meal
+                                        </button>
+
+                                    </div>
+
+                              </div>
 
                             <button onClick={() => setViewCustomMeals(true)} className='bg-orange-500 h-1/2 w-1/6 mt-5 self-end text-white p-2 rounded-md hover:opacity-75'>
                                 View Custom Meals
