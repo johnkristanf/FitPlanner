@@ -34,7 +34,7 @@ export const MealsModal = ({ value, closeMealModal}: any) => {
         <>   
                 <div className="bg-gray-500 z-40 fixed top-0 left-0 w-full h-full opacity-80"></div>
 
-            <div key={value.mealcontents.title} className="absolute m-auto z-50 bg-slate-700 px-5 py-16 rounded-md text-white w-1/2 h-2/3" 
+            <div key={value.mealcontents.title} className="absolute m-auto z-50 bg-slate-700 px-5 py-16 rounded-md text-white w-1/2 h-2/4" 
                 style={{ left: '-30%', right: '0', bottom: '0', top: '-50%' }}> 
 
                  
