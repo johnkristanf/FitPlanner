@@ -1,4 +1,8 @@
 import { useState } from 'react';
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTimes } from '@fortawesome/free-solid-svg-icons';
+
 import { CalculateCalories } from '../../../services/calculateCalories';
 
 import { DisplayCalories } from './DisplayCalories';
@@ -20,6 +24,9 @@ export const CalculatorForm = () => {
 
     const [Calories , setCalories]: any = useState('');
 
+    const [FormPopUp, setFormPopUp] = useState(false);
+
+
     console.log('Calories', Calories)
 
     const [formData, setFormData] = useState({
@@ -35,6 +42,8 @@ export const CalculatorForm = () => {
         e.preventDefault();
 
         setCalories(CalculateCalories(formData))
+
+        setFormPopUp(false)
 
         console.log('formData', formData)
     }
@@ -67,7 +76,23 @@ export const CalculatorForm = () => {
     return(
         <>
 
-           <div className="flex w-1/4 absolute left-0 min-h-full flex-1 flex-col justify-center px-6 py-24 lg:px-8 bg-orange-500">
+           <div className=
+
+              { 
+                FormPopUp 
+
+                  ? 'max-md:w-full max-md:top-0 max-md:justify-start max-md:py-0 max-md:z-50 flex w-1/4 absolute left-0 min-h-full flex-1 flex-col justify-center px-6 py-24 lg:px-8 bg-orange-500 max-md:block'
+
+                  : 'max-md:w-full max-md:top-0 max-md:justify-start max-md:py-0 flex w-1/4 absolute left-0 min-h-full flex-1 flex-col justify-center px-6 py-24 lg:px-8 bg-orange-500 max-md:hidden'
+              } 
+
+              >
+
+                <FontAwesomeIcon 
+                   className="text-5xl hover:opacity-75 text-white cursor-pointer absolute right-4 top-2"
+                   icon={faTimes} 
+                   onClick={() => setFormPopUp(false)}
+                />
 
         <div className="sm:mx-auto sm:w-full sm:max-w-sm pt-10">
            <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-white">
@@ -202,18 +227,29 @@ export const CalculatorForm = () => {
 
                 <div className='flex justify-center flex-wrap w-4/5 absolute right-5 top-40 p-10 gap-16'>
 
-                    <div className='absolute top-2 left-28'>
+                    <div className='absolute top-2 left-28 max-md:left-0'>
                         <h1 className='text-slate-800 font-bold text-3xl'>Calorie Calculator</h1>
                         <p className='text-slate-800 font-bold opacity-75'>The Calorie Calculator can
                            be used to estimate the number of calories a person needs to consume each day. This calculator can also provide some simple guidelines for gaining or losing weight.
                         </p>
+
+                        <div className="max-md:block hidden">
+
+                          <button 
+                            onClick={() => setFormPopUp(true)}
+                            className='mt-5 bg-orange-500 rounded-md p-2 text-white hover:opacity-75'>
+              
+                            Calculate Calorie
+                          </button>
+
+                        </div>
 
                     </div>
                 
                 { 
                   Calories === undefined ?
 
-                    <div className='flex flex-col mt-36'>
+                    <div className='flex flex-col mt-36 max-md:mt-48'>
                         <h1 className='text-4xl font-bold text-orange-500 my-3'>Invalid Inputs</h1> 
                             <p className='text-1xl font-bold text-orange-500'>
                                 Can't calculate calories make sure to put accurate data input

@@ -17,7 +17,7 @@ export const DisplayCalories = ({ Calories }: any ) => {
     return(
         <>
 
-        <div className="flex mt-5 font-bold">
+        <div className="flex mt-5 font-bold max-md:mt-32">
 
             <div className="flex flex-col">
 
@@ -33,6 +33,7 @@ export const DisplayCalories = ({ Calories }: any ) => {
                                 >
                             
                                {data.name}
+
                             </div>
                 
                     ))

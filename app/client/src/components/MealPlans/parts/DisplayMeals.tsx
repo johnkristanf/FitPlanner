@@ -34,7 +34,7 @@ export const DisplayMeals = ({ Meals }: any) => {
     
         return(
             
-            <div className="flex gap-5 flex-wrap justify-center">
+            <div className="flex max-md:flex-col gap-5 flex-wrap justify-center">
 
                 {
                     
@@ -87,7 +87,7 @@ export const DisplayMeals = ({ Meals }: any) => {
 
   return (
 
-    <div className="flex gap-10 flex-wrap justify-center">
+    <div className="flex max-md:flex-col gap-10 flex-wrap justify-center">
 
         {
     

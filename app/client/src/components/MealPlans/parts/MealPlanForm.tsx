@@ -1,5 +1,8 @@
 import { useState } from 'react';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTimes } from '@fortawesome/free-solid-svg-icons';
+
 import { MealPlansType, MealPlansApiResponseType } from '../../../lib/types/MealPlans';
 import { fetchMealPlans } from '../../../services/fetchMealPlans';
 
@@ -40,6 +43,9 @@ export const MealPlanForm = () => {
     const [TargetCalories, setTargetCalories] = useState('');
     const [Excluded, setExcluded] = useState('');
 
+    const [FormPopUp, setFormPopUp] = useState(false);
+
+
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
 
@@ -55,6 +61,8 @@ export const MealPlanForm = () => {
             const response = await fetchMealPlans(mealPlanData);
 
             if(response) setMeals(response);
+
+            setFormPopUp(false)
             
         } catch (error) {
             console.error(error);
@@ -67,7 +75,18 @@ export const MealPlanForm = () => {
 
     <>
 
-    <div className="flex absolute left-0 min-h-full w-1/4 flex-1 flex-col justify-center px-6 py-24 bg-orange-500 z-10 lg:px-8">
+    <div className=
+          {
+            FormPopUp 
+                ? 'max-md:block max-md:w-full max-md:top-0 max-md:justify-start max-md:py-0 max-md:z-50 flex absolute left-0 min-h-full w-1/4 flex-1 flex-col justify-center px-6 py-24 bg-orange-500 z-10 lg:px-8'
+                : 'max-md:hidden flex absolute left-0 min-h-full w-1/4 flex-1 flex-col justify-center px-6 py-24 bg-orange-500 z-10 lg:px-8'
+          } >
+
+         <FontAwesomeIcon 
+              className="text-5xl hover:opacity-75 text-white cursor-pointer absolute right-4 top-2"
+              icon={faTimes} 
+              onClick={() => setFormPopUp(false)}
+          />
 
       <div className="sm:mx-auto sm:w-full sm:max-w-sm pt-10">
         <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-white">
@@ -199,18 +218,32 @@ export const MealPlanForm = () => {
                     !Meals ?
 
                       <>
-                        <div className='flex flex-col ml-10 mt-3'>
+                        <div className='flex flex-col ml-10 mt-3 max-md:ml-[-20%] items-start'>
 
                               <h1 className='text-3xl font-bold text-slate-800 mb-3'>Generate Meal Plan</h1> 
                                 <p className='font-bold text-slate-800 opacity-75 text-1xl'>Keep tabs on your calorie consumption, macronutrient
                                   distribution, and meal adherence 
                                 </p>
 
+
+                              <div className="max-md:block hidden">
+
+                                  <button 
+                                    onClick={() => setFormPopUp(true)}
+                                    className='mt-5 bg-orange-500 rounded-md p-2 text-white hover:opacity-75'>
+              
+                                    Generate Meal
+                                  </button>
+
+                              </div>
+
                         </div>
 
-                          <button onClick={() => setViewCustomMeals(true)} className='bg-orange-500 h-1/2 text-white p-2 rounded-md hover:opacity-75'>
+                          <button onClick={() => setViewCustomMeals(true)} className='max-md:ml-[-20%] max-md:mt-[-10%] bg-orange-500 h-1/2 text-white p-2 rounded-md hover:opacity-75'>
                             View Custom Meals
                           </button>
+
+                          
 
                         
                       </>

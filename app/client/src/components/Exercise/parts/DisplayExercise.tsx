@@ -24,7 +24,10 @@ export const DisplayExercises = ({ Exercises }: any) => {
 
     return (
 
-        <>   
+        <>  
+
+        <div className="max-md:block w-full flex flex-col">
+            
             {sortedExercises.map((data: any) => (
               
                 <div key={data.name} className="w-1/4 bg-gray-300 p-5 rounded-md mt-10">
@@ -43,7 +46,9 @@ export const DisplayExercises = ({ Exercises }: any) => {
 
             ))}
 
-            {isOpen && <InstructionsModal exercise={selectedExercise} closeModal={closeModal} />}
+        </div>
+
+            { isOpen && <InstructionsModal exercise={selectedExercise} closeModal={closeModal} />}
 
         </> 
     );

@@ -1,4 +1,7 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTimes } from '@fortawesome/free-solid-svg-icons';
 
 import { ExercisesType } from '../../../lib/types/Exercises';
 import { fetchExercisesbyAttributes, fetchAllExercises } from '../../../services/fetchExercises';
@@ -55,6 +58,8 @@ export const FinderForm = () => {
 
   const [selectedDifficulty, setSelectedDifficulty] = useState(Difficulties[0].value);
 
+  const [FormPopUp, setFormPopUp] = useState(false);
+
 
   useEffect(()  => {
 
@@ -90,7 +95,7 @@ export const FinderForm = () => {
     setSelectedDifficulty(event.target.value);
   };
 
-  const handleSubmit = async (event: any) => {
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
     const exerciseData: ExercisesType = {
@@ -104,7 +109,9 @@ export const FinderForm = () => {
    
     console.log(response);
 
-    setExercises(response)
+    setExercises(response);
+
+    setFormPopUp(false);
 
   };
 
@@ -112,12 +119,29 @@ export const FinderForm = () => {
   return (
 
   <>
-    <div className="flex absolute left-0 min-h-full flex-1 flex-col justify-center px-6 py-24 lg:px-8 bg-orange-500">
 
-      <div className="sm:mx-auto sm:w-full sm:max-w-sm pt-10">
-        <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-white">
+    <div className=
+
+        {
+
+          FormPopUp
+            ? 'max-md:block max-md:w-full max-md:top-0 max-md:justify-start max-md:py-0 max-md:z-50 flex absolute left-0 min-h-full flex-col justify-center px-6 py-24 lg:px-8 bg-orange-500'
+                    
+            : 'flex absolute left-0 min-h-full  flex-col justify-center px-6 py-24 lg:px-8 bg-orange-500 max-md:hidden'
+        } >
+
+          <FontAwesomeIcon 
+              className="text-5xl hover:opacity-75 text-white cursor-pointer absolute right-4 top-2"
+              icon={faTimes} 
+              onClick={() => setFormPopUp(false)}
+          />
+
+      <div className="sm:mx-auto sm:w-full sm:max-w-sm pt-10 ">
+
+        <h2 className="mt-10 text-left text-2xl font-bold leading-9 tracking-tight text-white">
           Find an Exercise
         </h2>
+
       </div>
 
       <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
@@ -221,10 +245,27 @@ export const FinderForm = () => {
 
             <div className='flex justify-center flex-wrap w-4/5 absolute right-5 top-40 p-10 gap-16'>
 
-                  <div className='absolute top-0 left-20'>
+                  <div className='absolute top-0 left-20 max-md:left-0 z-10'>
+
                       <h1 className='text-slate-800 text-2xl font-bold'>Find a Exercise</h1>
                       <h3 className='text-slate-800 text-1xl opacity-95 font-bold'>Improve your Form and Discover new Exercise</h3>
+
+                        <div className="max-md:block hidden">
+
+                          <button 
+                            onClick={() => setFormPopUp(true)}
+                            className='mt-5 bg-orange-500 rounded-md p-2 text-white hover:opacity-75'>
+              
+                            Find an Exercise
+                          </button>
+
+                        </div>
+                       
+                          
                   </div>
+
+                  
+
                 
               { 
                   Exercises && Exercises.length === 0 ?
