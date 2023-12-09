@@ -66,13 +66,13 @@ export const DisplayCustomMeals = ({ closeModal }: any) => {
             </div>
         
 
-            <div className="absolute flex max-sm:flex-col max-sm:w-full max-sm:mt-10 justify-center w-full top-24 bottom-0 right-0 left-5 m-auto gap-10" style={{ zIndex: 600 }}>
+            <div className="absolute max-md:left-[-10%] flex max-sm:flex-col max-sm:w-full max-sm:mt-10 max-md:flex-col justify-center w-full top-24 bottom-0 right-0 left-5 m-auto gap-10" style={{ zIndex: 600 }}>
 
                 {
                     
                     SortedCustomMealPlans.map((plan: CustomMealPlansType) => (
 
-                        <div key={plan._id} className="w-1/4 h-1/4 max-sm:w-80 bg-gray-300 p-5 rounded-md mt-10">
+                        <div key={plan._id} className="w-1/4 h-3/4 max-sm:w-full max-md:w-full bg-gray-300 p-5 rounded-md mt-10">
 
                                 
                                 <h1 className="text-orange-500 font-bold text-2xl">{plan.weekday}</h1>
